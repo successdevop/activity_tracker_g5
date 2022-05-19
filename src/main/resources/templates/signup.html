@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>task and active tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdey">
+    <div class="login-container">
+        <h3 class="h3-title">Sign up</h3>
+        <form class="signup-form" th:action="@{/signup}" method="post" th:object="${personDto}">
+            <input type="text"
+                   name="fname"
+                   th:field="*{fname}"
+                   placeholder="first name"
+                   class="not-icon">
+            <input type="text"
+                   name="lname"
+                   th:field="*{lname}"
+                   placeholder="last name" class="not-icon">
+            <input type="email"
+                   name="email"
+                   th:field="*{email}"
+                   placeholder="email"
+                   class="not-icon">
+            <input type="password"
+                   name="password"
+                   th:field="*{password}"
+                   placeholder="password"
+                   class="not-icon">
+            <input type="password"
+                   name="cpassword"
+                   th:field="*{cpassword}"
+                   placeholder="password"
+                   class="not-icon">
+            <button type="submit" class="signup-btn">sign up</button>
+        </form>
+        <br>
+        <p class="toggle-loging"><a th:href="@{/}">Already have an account?</a></p>
+
+    </div>
+</div>
+
+</body>
+<script type="text/javascript"></script>
+
+</html>
